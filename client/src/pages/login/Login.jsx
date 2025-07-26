@@ -30,7 +30,9 @@ const Login = () => {
         validateError(username, password);
         if(username && password){
             dispatch(loginUser({username, password}))
+            if(isLoggedIn){
             handleShowAlert( 'success', 'Login Success!')
+            }
         }
     }
     useEffect(()=>{
