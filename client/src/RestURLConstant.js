@@ -1,0 +1,1 @@
+export const URL_BASE_PREFIX = 'http://localhost:5000';

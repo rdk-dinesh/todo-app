@@ -1,0 +1,25 @@
+.error-boundary-container {
+  padding: 40px;
+  text-align: center;
+  color: #b00020;
+  background-color: #fff3f3;
+  border: 1px solid #ffcdd2;
+  border-radius: 8px;
+  margin: 50px;
+}
+
+.error-boundary-container h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.error-boundary-container p {
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+
+.error-boundary-container details {
+  margin-top: 15px;
+  font-size: 0.9rem;
+  color: #555;
+}

@@ -1,0 +1,55 @@
+.todo{
+    width: 100%;
+    height: 93vh;
+    padding: 3rem 10rem;
+    background-color: var(--sy_bg_color);
+    box-sizing: border-box;
+}
+.todo__title{
+    color: var(--py_bg_color1);
+}
+
+.todo__add{
+    width: 100%;
+    height: 5%;
+    box-sizing: border-box;
+    background-color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 0 2px var(--py_font_color);
+    border-radius: 0.2rem;
+    padding: 0 1rem;
+}
+.todo__add__input{
+    width: 95%;
+    height: 90%;
+    outline: none;
+    border: none;
+
+}
+
+.todo__add_button{
+    width: 7%;
+    padding: 0.4rem 0.2rem;
+    border: none;
+    background-color: var(--py_bg_color1);
+    border-radius: 0.2rem;
+    color: var(--py_font_color);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.todo__content__box{
+    width: inherit;
+    background-color: var(--py_font_color);
+    height: 70%;
+    margin: 3rem 0;
+}
+
+.todo__header{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+}

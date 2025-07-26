@@ -1,0 +1,8 @@
+.search-bar {
+  width: 20%;
+  height: 30px;
+  outline: none;
+  border: none;
+  /* border-bottom: 2px solid var(--py_bg_color1); */
+  background-color: var(--sy_bg_color);
+}

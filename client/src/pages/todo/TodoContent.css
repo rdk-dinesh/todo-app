@@ -1,0 +1,56 @@
+.todo_edit__input{
+    width: inherit;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 11fr 1fr;
+    border-bottom: 1px solid black;
+    box-sizing: border-box;
+    column-gap: 5px;
+}
+
+.todo__content{
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 0.5fr 10.5fr 0.5fr 0.5fr;
+    border-bottom: 1px solid black;
+}
+
+.todo__content_delete,
+.todo__content_toggle,
+.todo__content_toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1em;
+  margin-left: 0.4em;
+  color: inherit;
+  transition: color 0.2s ease;
+}
+
+.todo__content_delete:hover {
+  color: hsl(0, 80%, 55%); /* Soft red */
+}
+
+.todo__content_toggle:hover {
+  color: hsl(210, 80%, 55%); /* Soft blue */
+}
+
+.todo__content__desc {
+  display: inline-block;
+  margin: 0 0.5em;
+  font-size: 1rem;
+  color: currentColor;
+}
+
+
+.todo__content_input {
+  padding: 0.4em 0.7em;
+  font-size: 1rem;
+  border: none;
+  border-bottom: 1px solid var(--py_bg_color1);
+  width: 100%;
+  background: inherit;
+  color: inherit;
+  outline: none;
+}
+

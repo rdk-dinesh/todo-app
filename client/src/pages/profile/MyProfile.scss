@@ -1,0 +1,95 @@
+.myprofile_container {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  align-items: center;
+  background: #f9f9f9;
+  height: 93vh;
+  box-sizing: border-box;
+}
+
+.myprofile {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  column-gap: 5rem;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  padding: 2rem;
+  width: 70%;
+  height: 60%;
+}
+
+.myprofile__image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+  }
+}
+
+.myprofile__infos {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  font-weight: bolder;
+  &__border {
+    width: 20%;
+    height: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #00bfff;
+    margin-bottom: 1rem;
+  }
+
+  &__title {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #333;
+  }
+
+  &__details {
+    font-size: 1.2rem;
+    margin: 0.5rem 0;
+    padding: 0;
+    span {
+      font-weight: 500;
+      margin-left: 0.3rem;
+      color: #747474;
+
+    }
+
+    ul {
+      padding-left: 3rem;
+      list-style: disc;
+
+      li {
+        margin-bottom: 0.2rem;
+      }
+    }
+  }
+
+  &__edit {
+    align-self: flex-end;
+    padding: 0.1rem 2rem;
+    background-color: var(--py_bg_color1);
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 600;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+
+    &:hover {
+      background-color: #0099cc;
+    }
+  }
+}

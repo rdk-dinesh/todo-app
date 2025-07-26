@@ -1,0 +1,20 @@
+:root{
+  --py_font_color: white;
+  --py_bg_color1:#00bfff;
+  --py_bg_color2:#87cefa;
+  --placeholder_color:rgb(165, 164, 164);
+  --py_font_weight:bold;
+  font-family: sans-serif;
+  --py_button_height:30px;
+  --py_button_width:80px;
+  --py_btn_bg:rosybrown;
+  --sy_bg_color: rgba(0, 0, 0, 0.05)
+}
+
+.App{
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
