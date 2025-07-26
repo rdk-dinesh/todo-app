@@ -93,3 +93,10 @@ npm start       # Runs backend on http://localhost:5000
 ```
 
 ---
+
+# Login Credentials
+
+username: amy_rogers
+password: password123
+
+Check the server/data.js file for more predefined user credentials.

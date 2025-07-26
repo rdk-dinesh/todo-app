@@ -53,11 +53,11 @@ const Edit = ({ userInfo, setIsEdit }) => {
                     </div>
                     <div className="edit__form__datas">
                         <label>Email:</label>
-                        <input type="text" onChange={handleChange} value={email} name="phone" required />
+                        <input type="text" onChange={handleChange} value={email} name="email" required />
                     </div>
                     <div className="edit__form__datas">
                         <label>Phone no:</label>
-                        <input type="text" onChange={handleChange} value={phone} name="email" required />
+                        <input type="text" onChange={handleChange} value={phone} name="phone" required />
                     </div>
                     <p className='edit__form__datas'>Address:</p>
                     <div className='edit__form__address'>
