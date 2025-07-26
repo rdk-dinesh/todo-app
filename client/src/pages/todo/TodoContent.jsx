@@ -7,6 +7,7 @@ const TodoContent = forwardRef(({todo, handleDelete, handleToggle, handleUpdate}
         handleUpdate(id);
         setIsEdit(false);
     }
+
     return (
         <>
             {isEdit ?
@@ -19,7 +20,7 @@ const TodoContent = forwardRef(({todo, handleDelete, handleToggle, handleUpdate}
                 :
                 <>  
                     <div className="todo__content" key={todo.id}>
-                    <input type='checkbox' className="todo__content_toggle" onChange={() => handleToggle(todo.id)}/>
+                    <input type='checkbox' className="todo__content_toggle" onChange={() => handleToggle(todo.id)} checked={todo.isCompleted}/>
                     <p className="todo__content__desc">{todo.task}</p>
                     <button className="todo__content_delete" onClick={() => handleDelete(todo.id)}><i class="fa-solid fa-xmark"></i></button>
                     <button className="todo__content_toggle" onClick={() => setIsEdit(true)}><i class="fa-solid fa-pen-to-square"></i></button>

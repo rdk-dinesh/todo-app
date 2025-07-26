@@ -7,6 +7,7 @@ import { persistor, store } from './store/store';
 import { BrowserRouter } from 'react-router-dom';
 import { PersistGate } from 'redux-persist/integration/react';
 import ErrorBoundary from './components/errorBoundary/ErrorBoundary';
+import { AlertProvider } from './context/AlertContext';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -15,7 +16,9 @@ root.render(
       <BrowserRouter>
         <Provider store={store}>
           <PersistGate loading={<p>Loading...</p>} persistor={persistor}>
-            <App />
+            <AlertProvider>
+              <App />
+            </AlertProvider>
           </PersistGate>
         </Provider>
       </BrowserRouter>

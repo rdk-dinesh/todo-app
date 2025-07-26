@@ -4,12 +4,14 @@ import { loginUser } from '../../store/actions/loginAction';
 import { useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import './Login.css';
+import { useAlert } from '../../context/AlertContext';
 
 const Login = () => {
     const [errors, setErrors] = useState({username: '', password: ''})
     const usernameRef = useRef(null);
     const passwordRef = useRef(null);
     const dispatch = useDispatch();
+    const { handleShowAlert } = useAlert();
     const { user, isLoggedIn, error  }  = useSelector(state => state.auth);
     
     const navigate = useNavigate();
@@ -28,6 +30,7 @@ const Login = () => {
         validateError(username, password);
         if(username && password){
             dispatch(loginUser({username, password}))
+            handleShowAlert( 'success', 'Login Success!')
         }
     }
     useEffect(()=>{

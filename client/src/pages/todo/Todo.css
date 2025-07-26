@@ -45,6 +45,7 @@
     background-color: var(--py_font_color);
     height: 70%;
     margin: 3rem 0;
+    overflow-y: scroll;
 }
 
 .todo__header{
@@ -52,4 +53,12 @@
     width: 100%;
     justify-content: space-between;
     align-items: center;
+}
+
+.todo__no_results{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: larger;
 }

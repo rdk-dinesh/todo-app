@@ -2,10 +2,12 @@ import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { updateUserDetails } from '../../store/actions/userAction';
 import './Edit.scss'
+import { useAlert } from '../../context/AlertContext';
 
 const Edit = ({ userInfo, setIsEdit }) => {
     const [details, setDetails] = useState(userInfo);
     const dispatch = useDispatch();
+    const { handleShowAlert } = useAlert();
     const userId = useSelector(state => state.auth.userId);
     const { name, email, phone, address: { street, city, zipcode } } = details;
 
@@ -34,6 +36,7 @@ const Edit = ({ userInfo, setIsEdit }) => {
     const onSubmitChange = (e) => {
         e.preventDefault();
         dispatch(updateUserDetails({ userId, details }));
+        handleShowAlert('success', 'User details updated successfully!');
         setIsEdit(false)
     }
     return (
@@ -50,11 +53,11 @@ const Edit = ({ userInfo, setIsEdit }) => {
                     </div>
                     <div className="edit__form__datas">
                         <label>Email:</label>
-                        <input type="text" onChange={handleChange} value={phone} name="phone" required />
+                        <input type="text" onChange={handleChange} value={email} name="phone" required />
                     </div>
                     <div className="edit__form__datas">
                         <label>Phone no:</label>
-                        <input type="text" onChange={handleChange} value={email} name="email" required />
+                        <input type="text" onChange={handleChange} value={phone} name="email" required />
                     </div>
                     <p className='edit__form__datas'>Address:</p>
                     <div className='edit__form__address'>

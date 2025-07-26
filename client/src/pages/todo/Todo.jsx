@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux';
 import TodoContent from './TodoContent';
 import './Todo.css';
 import SearchBar from '../../components/search/SearchBar';
+import { useAlert } from '../../context/AlertContext';
 
 const Todo = () => {
     const [searchString, setSearchString] = useState('');
@@ -13,6 +14,7 @@ const Todo = () => {
     const userTasks = useSelector(state => state.todo.tasks);
     const inputRef = useRef(null);
     const editRef = useRef(null);
+    const {  handleShowAlert } = useAlert();
 
     useEffect(() => {
         dispatch(fetchTodo({ userId }))
@@ -20,13 +22,15 @@ const Todo = () => {
 
     const handleAddTask = () => {
         if (inputRef?.current?.value.trim()) {
-            dispatch(addTodo({ userId, task: inputRef.current.value }))
+            dispatch(addTodo({ userId, task: inputRef.current.value }));
+            handleShowAlert('success', 'Task added successfully!');
         }
         inputRef.current.value = ''
     }
 
     const handleDelete = (taskId) => {
-        dispatch(deleteTodo({ userId, taskId }))
+        dispatch(deleteTodo({ userId, taskId }));
+        handleShowAlert('success', 'Todo deleted successfully!');
     }
 
     const handleToggle = (taskId) => {
@@ -36,7 +40,8 @@ const Todo = () => {
     const handleUpdate =(taskId)=>{
         const currentValue = editRef?.current?.value;
         if(currentValue){
-            dispatch(updateTodo({userId, taskId, task: currentValue }))
+            dispatch(updateTodo({userId, taskId, task: currentValue }));
+            handleShowAlert('success', 'Task updated successfully!');
         }
     }
 
@@ -55,6 +60,9 @@ const filteredTodos = userTasks.filter(todo =>
                 <button className="todo__add_button" onClick={handleAddTask}>Add</button>
             </div>
             <div className="todo__content__box">
+                {
+                    filteredTodos.length <=0 && <div className='todo__no_results'>No results found!</div> 
+                }
                 {
                     filteredTodos && filteredTodos.map((todo) => (
                         <TodoContent todo={todo} handleDelete={handleDelete} handleToggle={handleToggle} handleUpdate={handleUpdate} ref={editRef}/>
