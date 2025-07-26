@@ -3,14 +3,15 @@ import './Navbar.scss';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginActionTypes } from '../../store/action_types/loginActionTypes';
-
+import { useAlert } from '../../context/AlertContext';
 
 const Navbar = ({ setTogglePopup }) => {
   const dispatch = useDispatch();
   const isLogged = useSelector((state) => state.auth.isLoggedIn);
-
+  const { handleShowAlert } = useAlert();
   const handleLogout = () => {
-    dispatch({type: loginActionTypes.LOGOUT_USER })
+    dispatch({type: loginActionTypes.LOGOUT_USER });
+     handleShowAlert('success', 'You’ve been signed out.') 
   };
 
   return (

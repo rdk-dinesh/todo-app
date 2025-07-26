@@ -30,7 +30,7 @@ const Todo = () => {
 
     const handleDelete = (taskId) => {
         dispatch(deleteTodo({ userId, taskId }));
-        handleShowAlert('success', 'Todo deleted successfully!');
+        handleShowAlert('success', 'Task deleted successfully!');
     }
 
     const handleToggle = (taskId) => {

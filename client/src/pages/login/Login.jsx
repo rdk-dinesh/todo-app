@@ -39,7 +39,9 @@ const Login = () => {
     },[isLoggedIn, user, navigate]);
 
     useEffect(()=>{
-        handleShowAlert('succes', 'User logged in successfully')
+        if(isLoggedIn === true){
+            handleShowAlert('succes', 'User logged in successfully');
+        }
     },[isLoggedIn])
 
     return (
